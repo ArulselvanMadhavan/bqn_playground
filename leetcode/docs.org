@@ -1,0 +1,15 @@
+1. [[https://leetcode.com/problems/lemonade-change/description/?envType=daily-question&envId=2024-08-15][Lemonade change]]
+#+begin_src bqn
+y←5‿5‿10‿10‿20
+nz←(0¨⍷y)
+y_p←⊐y
+MakeBill←{𝕊𝕩:(1⊸+)⌾(𝕩⊸⊑) nz}
+F←{𝕨𝕊𝕩:
+i←(⊑𝕩⊐1) #index of first one
+((-1)⊸+)⌾(i⊸↑)(𝕨+𝕩)
+}
+y_b←MakeBill¨y_p
+finalPurse←⊑(-1)↑F`y_b
+IsValid←{𝕊𝕩:∧´(≥⟜0)¨ 𝕩}
+(IsValid finalPurse) ⊑ "false"‿"true"
+#+end_src
