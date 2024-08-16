@@ -1,6 +1,5 @@
 1. [[https://leetcode.com/problems/lemonade-change/description/?envType=daily-question&envId=2024-08-15][Lemonade change]]
 #+begin_src bqn
-  # Assumes y is in sorted order
 y←5‿10‿5‿5‿5‿5‿20‿10
 bills←5‿10‿20
 
@@ -18,3 +17,16 @@ y_b←MakeBill¨y
 finalPurse←⊑(-1)↑SalePerCustomer`y_b
 (IsValid finalPurse) ⊑ "false"‿"true"
 #+end_src
+2. [[https://leetcode.com/problems/plus-one/description/][PlusOne]]
+   #+begin_src bqn
+PlusOne←{𝕊𝕩:
+yz←0∾𝕩
+i←⊑yz⊐9
+p1←(i)↑yz,
+p2←(i)↓yz
+y←p1∾(0¨↕≠p2)
+y2←(1⊸+)⌾((i-1)⊸⊑) y
+(⊑y2=0)⊸↓y2
+}
+PlusOne [9,9,9,9]
+   #+end_src
