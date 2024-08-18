@@ -30,3 +30,10 @@ y2←(1⊸+)⌾((i-1)⊸⊑) y
 }
 PlusOne [9,9,9,9]
    #+end_src
+3. [[https://leetcode.com/problems/can-place-flowers/description/][CanPlaceFlowers]]
+   #+begin_src bqn
+y←[1,0,0,0,0,0,0,0,0,0]
+z←3↕0∾y∾0
+z2←+˝⎉1 z
+⌈(≠(0⊸=)⊸/z2)÷2
+   #+end_src
